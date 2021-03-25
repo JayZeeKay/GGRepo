@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.subsystem.Drivetrain;
 
-@TeleOp (name = "DrivetrainTest", group = "Test")
+@TeleOp (name ="DrivetrainTest", group = "Test")
 public class DrivetrainTest extends LinearOpMode {
 
     public Drivetrain drive;
@@ -13,7 +13,7 @@ public class DrivetrainTest extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         drive = new Drivetrain(hardwareMap.dcMotor.get("frontLeft"), hardwareMap.dcMotor.get("frontRight"), hardwareMap.dcMotor.get("backLeft"), hardwareMap.dcMotor.get("backRight"));
-        telemetry.addData("How to Use", "Use sticks to drive");
+        telemetry.addData("How to Use", "Tank Drive. Use sticks to drive");
         telemetry.update();
         waitForStart();
         while(opModeIsActive()) {
