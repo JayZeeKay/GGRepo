@@ -17,8 +17,8 @@ public class Flywheel {
     }
 
     public void init() {
-        leftFlywheel.setDirection(DcMotorSimple.Direction.REVERSE);
-        rightFlywheel.setDirection(DcMotorSimple.Direction.FORWARD);
+        leftFlywheel.setDirection(DcMotorSimple.Direction.FORWARD);
+        rightFlywheel.setDirection(DcMotorSimple.Direction.REVERSE);
     }
 
     public void setPower(double lP, double rP) {
@@ -43,7 +43,7 @@ public class Flywheel {
     }
 
     public void reverse() {
-        setPower(speed);
+        setPower(-speed);
     }
 
     public void setSpeed(double speed) {

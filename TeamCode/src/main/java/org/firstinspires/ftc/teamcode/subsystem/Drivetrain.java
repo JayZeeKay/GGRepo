@@ -153,6 +153,14 @@ public class Drivetrain {
         setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
+    public void forward(double inches, double power) {
+        drive(inches, inches, inches, inches, power, power, power, power);
+    }
+
+    public void backward(double inches, double power) {
+        forward(-inches, -power);
+    }
+
     public boolean allBusy() {
         return frontLeft.isBusy() && frontRight.isBusy() && backLeft.isBusy() && backRight.isBusy();
     }
