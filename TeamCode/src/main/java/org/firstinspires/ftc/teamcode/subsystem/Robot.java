@@ -19,7 +19,7 @@ public class Robot {
         drivetrain = new Drivetrain(hwMap.dcMotor.get("frontLeft"), hwMap.dcMotor.get("frontRight"), hwMap.dcMotor.get("backLeft"), hwMap.dcMotor.get("backRight"));
         intake = new Intake(hwMap.crservo.get("leftFlipper"), hwMap.crservo.get("rightFlipper"), hwMap.dcMotor.get("puller"));
         flywheel = new Flywheel(hwMap.dcMotor.get("leftFlywheel"), hwMap.dcMotor.get("rightFlywheel"));
-        belt = new Belt(hwMap.dcMotor.get("Belt"));
+        belt = new Belt(hwMap.dcMotor.get("belt"));
     }
 
     public Drivetrain getDrivetrain() {

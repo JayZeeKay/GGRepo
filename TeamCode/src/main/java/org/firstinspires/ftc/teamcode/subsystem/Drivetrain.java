@@ -8,7 +8,7 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 public class Drivetrain {
 
     private DcMotor frontLeft, frontRight, backLeft, backRight;
-    private double TICKS_PER_INCH = 1200 / (4 * Math.PI);
+    private double TICKS_PER_INCH = 592.3 / (4 * Math.PI);
     private int fLTicks, fRTicks, bLTicks, bRTicks;
     private Telemetry telem;
 

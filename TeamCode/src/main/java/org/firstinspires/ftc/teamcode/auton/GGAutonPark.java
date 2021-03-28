@@ -8,15 +8,15 @@ import org.firstinspires.ftc.teamcode.subsystem.Robot;
 @Autonomous (name = "GGAutonPark", group = "a")
 public class GGAutonPark extends LinearOpMode {
 
-    Robot ggbot;
+    Robot ggbot = new Robot();
 
     @Override
     public void runOpMode() throws InterruptedException {
         ggbot.init(hardwareMap, telemetry);
+        ggbot.getDrivetrain().setTelemetry(telemetry);
         telemetry.addData("How to Use", "Park robot on right tape, against the wall");
         telemetry.update();
         waitForStart();
-        ggbot.getDrivetrain().forward(62, 0.5);
-
+        ggbot.getDrivetrain().backward(62, 0.5);
     }
 }

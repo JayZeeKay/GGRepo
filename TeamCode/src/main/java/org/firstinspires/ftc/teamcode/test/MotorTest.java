@@ -8,9 +8,11 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @Disabled
 @TeleOp (name = "MotorTest", group = "Test")
 public class MotorTest extends LinearOpMode {
+
     DcMotor motor;
+
     @Override
     public void runOpMode() throws InterruptedException {
-        motor.
+
     }
 }

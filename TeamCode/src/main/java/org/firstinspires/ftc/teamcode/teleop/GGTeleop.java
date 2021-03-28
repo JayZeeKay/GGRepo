@@ -25,12 +25,12 @@ public class GGTeleop extends LinearOpMode {
         waitForStart();
         while (opModeIsActive()) {
             // drivetrain
-            rightSlide = -gamepad1.right_stick_x;
-            leftSlide = -gamepad1.left_stick_x;
-            rightMove = -gamepad1.right_stick_y;
-            leftMove = -gamepad1.left_stick_y;
-            ggbot.getDrivetrain().setRightSide(rightSlide + rightMove, -rightSlide + rightMove);
-            ggbot.getDrivetrain().setLeftSide(-leftSlide + leftMove, leftSlide + leftMove);
+            rightSlide = gamepad1.right_stick_x;
+            leftSlide = gamepad1.left_stick_x;
+            rightMove = gamepad1.right_stick_y;
+            leftMove = gamepad1.left_stick_y;
+            ggbot.getDrivetrain().setRightSide(-rightSlide + rightMove, rightSlide + rightMove);
+            ggbot.getDrivetrain().setLeftSide(leftSlide + leftMove, -leftSlide + leftMove);
 
             // flywheel
 //            if (Math.abs(gamepad2.right_trigger) > .2) {
@@ -48,16 +48,16 @@ public class GGTeleop extends LinearOpMode {
                 ggbot.getFlywheel().stop();
             }
 
-            // intake
-            if (gamepad1.right_trigger > .2) {
+            // intake servo
+            if (gamepad1.right_bumper) {
                 ggbot.getIntake().flipIn();
-            } else if (gamepad1.left_trigger > .2) {
+            } else if (gamepad1.left_bumper) {
                 ggbot.getIntake().flipOut();
             } else {
                 ggbot.getIntake().stopServos();
             }
 
-            // intake geartrain
+            // intake motor
             if (gamepad2.x) {
                 ggbot.getIntake().pushOut();
             } else if (gamepad2.y) {
@@ -77,8 +77,8 @@ public class GGTeleop extends LinearOpMode {
 
             telemetry.addData("How to Use", "Basic Teleop")
                     .addData("Drivetrain", "G1: Tank Drive + Strafe. Use sticks to move")
-                    .addData("Intake", "G1: r/l triggers to flip servos in/out.")
-                    .addData("Flywheel", "Use right bumper to shoot, left bumper to reverse")
+                    .addData("Intake", "G1: r/l bumper to flip servos in/out.")
+                    .addData("Flywheel", "G2: Use right bumper to shoot, left bumper to reverse")
                     .addData("Belt", "G2: A to bring forward, B to reverse")
                     .addData("Intake Geartrain", "G2: x/y button to forward/reverse intake geartrain");
             telemetry.addData("frontLeft", ggbot.getDrivetrain().getFrontLeft().getPower())
