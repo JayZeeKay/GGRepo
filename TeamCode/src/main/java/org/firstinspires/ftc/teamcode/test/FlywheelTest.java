@@ -13,7 +13,7 @@ public class FlywheelTest extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
         flywheel = new Flywheel(hardwareMap.dcMotor.get("leftFlywheel"), hardwareMap.dcMotor.get("rightFlywheel"));
-        telemetry.addData("How to Use", "Use right trigger to shoot, left trigger to reverse");
+        telemetry.addData("How to Use", "Use right bumper to shoot, left bumper to reverse");
         telemetry.update();
         waitForStart();
         while (opModeIsActive()) {

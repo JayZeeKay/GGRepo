@@ -27,7 +27,11 @@ public class DrivetrainStrafeTest extends LinearOpMode {
             telemetry.addData("frontLeft", drive.getFrontLeft().getPower())
                     .addData("frontRight", drive.getFrontRight().getPower())
                     .addData("backLeft", drive.getBackLeft().getPower())
-                    .addData("backRight", drive.getBackRight().getPower());
+                    .addData("backRight", drive.getBackRight().getPower())
+                    .addData("frontLeftEnc", drive.getFrontLeft().getCurrentPosition())
+                    .addData("frontRightEnc", drive.getFrontRight().getCurrentPosition())
+                    .addData("backLeftEnc", drive.getBackLeft().getCurrentPosition())
+                    .addData("backRightEnc", drive.getBackRight().getCurrentPosition());
             telemetry.update();
         }
     }

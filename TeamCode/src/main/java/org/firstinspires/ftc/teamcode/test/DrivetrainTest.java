@@ -1,10 +1,12 @@
 package org.firstinspires.ftc.teamcode.test;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.subsystem.Drivetrain;
 
+@Disabled
 @TeleOp (name ="DrivetrainTest", group = "Test")
 public class DrivetrainTest extends LinearOpMode {
 
